@@ -1,4 +1,4 @@
-import { MemoryStore, TextHill } from '@texthill/core'
+// import { MemoryStore, TextHill } from '@texthill/core'
 
 const getGames = async () => {
   const res = await fetch('https://www.freetogame.com/api/games')
@@ -9,15 +9,16 @@ const getGames = async () => {
   return JSON.parse(json)
 }
 
-const getGamesByName = async (query: string) => {
-  const games = await getGames()
-  const th = new TextHill(new MemoryStore())
+// const getGamesByName = async (query: string) => {
+//   const games = await getGames()
+//   const th = new TextHill(new MemoryStore())
 
-  games.map(async (game: any) => {
-    await th.feedDoc(game.title, game)
-  })
+//   games.map(async (game: any) => {
+//     await th.feedDoc(game.title, game)
+//   })
 
-  return await th.search(query)
-}
+//   return await th.search(query)
+// }
 
-export { getGames, getGamesByName }
+// export { getGames, getGamesByName }
+export { getGames }

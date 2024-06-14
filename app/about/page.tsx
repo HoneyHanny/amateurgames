@@ -1,7 +1,8 @@
-import { title, subtitle } from '@/components/primitives'
+import Link from 'next/link'
+
 import { Button } from '@nextui-org/button'
 import { Spacer } from '@nextui-org/spacer'
-import Link from 'next/link'
+import { title, subtitle } from '@/components/primitives'
 
 export default function AboutPage() {
   return (

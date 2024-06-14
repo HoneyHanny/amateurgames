@@ -1,13 +1,11 @@
-import { title } from '@/components/primitives'
-
+import Image from 'next/image'
 import Link from 'next/link'
+
 import { Chip } from '@nextui-org/chip'
-import { Divider } from '@nextui-org/divider'
-import { Spacer } from '@nextui-org/spacer'
 import { Button } from '@nextui-org/button'
 import { Card, CardHeader, CardBody, CardFooter } from '@nextui-org/card'
 
-import Image from 'next/image'
+import { title } from '@/components/primitives'
 import { getGames } from '@/utils/game-utils'
 
 const Home = async () => {
@@ -20,10 +18,10 @@ const Home = async () => {
       </section>
       <section className='flex flex-row flex-wrap gap-8 justify-center no-scrollbar'>
         {games.map((game: any) => (
-          <Card className='w-80 h-110 transition-transform transform hover:scale-105' isBlurred>
+          <Card isBlurred key={game.id} className='w-80 h-110 transition-transform transform hover:scale-105'>
             <CardHeader>{game.title}</CardHeader>
             <CardBody className='py-2 no-scrollbar'>
-              <Image src={game.thumbnail} alt='Thumbnail' width={300} height={100} className='object-cover rounded-xl' />
+              <Image alt='Thumbnail' src={game.thumbnail} width={300} height={100} className='object-cover rounded-xl' />
               <text className='text-ellipsis pt-2'>{game.short_description}</text>
             </CardBody>
             <CardFooter>
