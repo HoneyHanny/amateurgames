@@ -6,7 +6,7 @@ import NextLink from 'next/link'
 import clsx from 'clsx'
 
 import { siteConfig } from '@/config/site'
-import { Logo, GithubIcon } from '@/components/icons'
+import { GithubIcon, AmateurGamesLogo } from '@/components/icons'
 
 export const Navbar = () => {
   // const search = useRef<HTMLInputElement>(null)
@@ -52,11 +52,11 @@ export const Navbar = () => {
   // )
 
   return (
-    <NextUINavbar maxWidth='xl' position='sticky'>
+    <NextUINavbar maxWidth='xl' position='sticky' className='outline-1'>
       <NavbarContent className='basis-1/5 sm:basis-full' justify='start'>
         <NavbarBrand as='li' className='gap-3 max-w-fit'>
           <NextLink className='flex justify-start items-center gap-1' href='/'>
-            <Logo />
+            <AmateurGamesLogo />
             <p className='font-bold text-inherit'>Amateur Games</p>
           </NextLink>
         </NavbarBrand>
